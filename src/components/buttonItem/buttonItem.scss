@@ -1,0 +1,31 @@
+button{
+  &.button__item{
+    padding: 0 15px;
+    height: 32px;
+    outline: none;
+    color:#fff;
+    font-size:14px;
+    font-weight: 500;
+    line-height: 32px;
+    cursor: pointer;
+    border:none;
+    margin:10px;
+    border-radius:4px;
+    background-color:#F83;
+    &[type="small"]{
+      padding:0 5px;
+    }
+    &[type="primary"]{
+      padding:0 15px;
+    }
+    &[type="middle"]{
+      padding:0 30px;
+    }
+    &[type="large"]{
+      padding:0 45px;
+    }
+    a{
+      color:#fff;
+    }
+  }
+}

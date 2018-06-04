@@ -1,0 +1,20 @@
+.button-wrap{
+  button{
+    height: 32px;
+    outline: none;
+    color:#fff;
+    font-size:14px;
+    font-weight: 500;
+    line-height: 32px;
+    cursor: pointer;
+    border:none;
+    border-radius:4px;
+    background-color:#F83;
+    &[type="primary"]{
+      padding:0 15px;
+    }
+    &[type="middle"]{
+      padding:0 30px;
+    }
+  }
+}
