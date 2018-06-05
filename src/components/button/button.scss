@@ -1,20 +1,57 @@
-.button-wrap{
-  button{
-    height: 32px;
-    outline: none;
-    color:#fff;
-    font-size:14px;
-    font-weight: 500;
-    line-height: 32px;
-    cursor: pointer;
-    border:none;
-    border-radius:4px;
-    background-color:#F83;
-    &[type="primary"]{
-      padding:0 15px;
+@import "../../assets/scss/common";
+.xcs-btn{
+  box-sizing:border-box;
+  background-color:#fff;
+  border:$border;
+  outline:none;
+  @include height(30px);
+  @include border-radius(4px);
+  cursor: $cursor;
+  text-align:center;
+  padding:0 12px;
+  span{
+    color: $defaultMainColor;
+    display: inline-block;
+    @include font(14px,$fontDefaultFamily,14px);
+  }
+  &.xcs-btn-small{
+    @include height(24px);
+    @include border-radius(2px);
+    padding:0 18px;
+    span{
+      @include font(12px,$fontDefaultFamily,22px);
     }
-    &[type="middle"]{
-      padding:0 30px;
+    &.xcs-btn-isActive{
+      span{
+        @include font(12px,$fontDefaultFamily,22px);
+      }
+    }
+  }
+  &.xcs-btn-large{
+    @include height(34px);
+    padding:0 39px;
+  }
+  &.xcs-btn-ellipsis{
+    span{
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  &.xcs-btn-isActive,
+  &.xcs-btn-hover{
+    background-color:$defaultMainColor;
+    span{
+      color:#fff;
+      @include font(14px,$fontDefaultFamily,14px);
+    }
+  }
+  &.xcs-btn-disabled{
+    cursor: not-allowed;
+    background-color:$disabledBgColor;
+    @include set-border(1px,solid, $disabledBgColor);
+    span{
+      color:$disableColor;
     }
   }
 }

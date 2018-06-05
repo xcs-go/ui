@@ -1,0 +1,46 @@
+*{
+  padding:0;
+  margin:0;
+}
+// 默认主题颜色
+$defaultMainColor:#FF8833;
+
+// 禁用背景颜色
+$disabledBgColor:#d9d9d9;
+
+//禁用文字颜色
+$disableColor:rgba(0, 0, 0, 0.25);
+
+// 默认边框
+$border:1px solid $defaultMainColor;
+
+// hover手势
+$cursor:pointer;
+
+// 默认字体
+$fontDefaultFamily:' PingFangSC-Regular;';
+
+// 混入border-radius，传入radius参数即可
+@mixin border-radius($radius){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius:$radius;
+  border-radius:$radius;
+}
+
+// 设置高度
+@mixin height($height){
+  height: $height;
+}
+
+// 设置文字
+@mixin font($size,$family,$lineHeight){
+  font-size:$size;
+  font-family:$family;
+  line-height:$lineHeight;
+}
+
+// 设置border
+@mixin set-border($width,$type,$color){
+  border:$width $type $color;
+}

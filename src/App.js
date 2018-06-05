@@ -6,6 +6,7 @@ import Dialog from './components/dialog';
 import Alert from './components/alert';
 import Loading from './components/loading';
 import Home from './components/home'
+import Input from './components/input';
 
 import './App.css';
 
@@ -22,6 +23,7 @@ class App extends Component {
               <Route path="/button" component={Button} />
               <Route path="/dialog" component={Dialog} />
               <Route path="/alert" component={Alert} />
+              <Route path="/input" component={Input} />
               <Route path="/loading" component={Loading} />
             </div>
           </div>
