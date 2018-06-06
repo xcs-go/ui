@@ -1,0 +1,77 @@
+@import "../../assets/scss/common";
+.xcs-input-wrapper{
+  display: inline-block;
+  position: relative;
+  @include set-border(1px,solid,$defaultBgColor);
+  @include border-radius(4px);
+  &.xcs-input-error-state{
+    @include set-border(1px, solid, $defaultErrorColor);
+    &:hover{
+      @include set-border(1px, solid, $defaultErrorColor);
+    }
+  }
+  &:hover{
+    @include set-border(1px, solid, $defaultHoverColor);
+  }
+  &.xcs-input-disabled{
+    @include set-border(1px, solid, #eeeeee);
+  }
+  .xcs-input-error-tip{
+    position: absolute;
+    bottom:-16px;
+    display: block;
+    color:#FC3333;
+    @include font(12px,$fontDefaultFamily,12px);
+    @include ellipsis(440px);
+  }
+  .xcs-btn{
+    position: absolute;
+    right:0;
+    top:0;
+    background-color:$defaultHoverColor;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border:0;
+    span{
+      color:#fff;
+    }
+  }
+}
+.xcs-input{
+  box-sizing: $borderBox;
+  background:$defaultBgColor;
+  outline:none;
+  width:440px;
+  overflow: hidden;
+  @include border-radius(4px);
+  @include set-border(1px,solid,#ddd);
+  &::-webkit-input-placeholder{
+    color:#bbb;
+  }
+  &::-moz-placeholder{
+    color:#bbb;
+  }
+  &:-ms-input-placeholder{
+    color:#bbb;
+  }
+  &.xcs-input-large{
+    @include height(34px);
+    @include font(14px,$fontDefaultFamily,14px);
+    @include setPadding(10px, 0, 10px, 16px);
+  }
+  &.xcs-input-default{
+    @include height(30px);
+    @include font(12px,$fontDefaultFamily,12px);
+    @include setPadding(9px,0,9px,12px);
+  }
+  &.xcs-input-small{
+    @include height(24px);
+    @include font(12px,$fontDefaultFamily,12px);
+    @include setPadding(6px,0,6px,12px);
+  }
+  &.xcs-input-disabled{
+    background:#EEEEEE;
+    @include set-border(1px, solid, #eeeeee);
+    cursor: not-allowed;
+  }
+}

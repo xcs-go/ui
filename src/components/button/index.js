@@ -48,7 +48,7 @@ class Button extends Component{
         prefixCls:'xcs-btn',
         size:'default',
         text:'正常按钮',
-        hover:true,
+        hover:false,
         onClick:()=>{}
     }
     constructor(props){
@@ -62,7 +62,7 @@ class Button extends Component{
     }
 
     render(){
-        const {text,size,className,href,shap,prefixCls,disabled,isActive,ellipsis,hover,maxWidth,...others} = this.props;
+        const {text,size,className,href,shap,prefixCls,disabled,isActive,ellipsis,hover,maxWidth} = this.props;
         // 判断解构赋值是否成功，如果成功，则使用a标签来模拟按钮，点击跳转到相应的链接
         const ComponentProp =  href ? 'a' : 'button';
         const classes = classNames(prefixCls,className,{
@@ -86,6 +86,7 @@ Button.propTypes = {
     text:PropTypes.string,
     size:PropTypes.oneOf(['small','default','large']),
     href:PropTypes.string,
+    className:PropTypes.string,
     shap:PropTypes.string,
     disabled:PropTypes.bool,
     isActive:PropTypes.bool,

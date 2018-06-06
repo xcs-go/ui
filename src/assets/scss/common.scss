@@ -2,11 +2,24 @@
   padding:0;
   margin:0;
 }
+
+// 开启怪异盒模型
+$borderBox:border-box;
+
 // 默认主题颜色
 $defaultMainColor:#FF8833;
 
+// 默认背景色
+$defaultBgColor:#fff;
+
 // 禁用背景颜色
 $disabledBgColor:#d9d9d9;
+
+// 默认hover颜色
+$defaultHoverColor:#3B99FF;
+
+// 默认错误颜色
+$defaultErrorColor:#FC3333;
 
 //禁用文字颜色
 $disableColor:rgba(0, 0, 0, 0.25);
@@ -43,4 +56,15 @@ $fontDefaultFamily:' PingFangSC-Regular;';
 // 设置border
 @mixin set-border($width,$type,$color){
   border:$width $type $color;
+}
+
+@mixin setPadding($top,$right,$bottom,$left){
+  padding: $top $right $bottom $left;
+}
+
+@mixin ellipsis($width:100%){
+  max-width: $width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
