@@ -18,13 +18,11 @@ export default class Input extends Component{
         errorState:false,
         isDisable:false,
         searchBtn:true,
-        //width:200,
-       // errorText:'错误提示',
         placeholder:'请输入内容',
         isAutoFocus:false,
         onChange:v => {},
         onKeyDown:v=>{},
-        onSearch:v=>{}
+        onSearch:v=>{},
     }
     constructor(props){
         super(props);
@@ -71,10 +69,12 @@ export default class Input extends Component{
     }*/
 
     render(){
-        const {prefixCls,className,type,size,placeholder,maxLength,errorState,isDisable,isAutoFocus,searchBtn,width,errorText,searchBtnText,...other} = this.props;
+        const {prefixCls,className,type,size,placeholder,maxLength,errorState,isDisable,isAutoFocus,searchBtn,width,errorText,searchBtnText,addLeftIcon,addRightIcon,...other} = this.props;
         const classess = classNames(prefixCls,className,{
             [`${prefixCls}-${size}`]:size,
-            [`${prefixCls}-disabled`]:isDisable
+            [`${prefixCls}-disabled`]:isDisable,
+            [`${prefixCls}-left__icon`]:addLeftIcon,
+            [`${prefixCls}-icon`]:addRightIcon
         });
         const wrapClass = classNames({
             [`${prefixCls}-wrapper`]:true,
@@ -95,7 +95,9 @@ export default class Input extends Component{
                        onKeyDown={this.handleKeyDown}
                        style={style}
                        ref={this.input} />
-                {searchBtn ? <Button text={searchBtnText} disabled={isDisable} onClick={this.handleSearch} /> : null}
+                {addLeftIcon ? <span className={`${prefixCls}-left-icon`}>{addLeftIcon}</span> : null}
+                {addRightIcon ? <span className={`${prefixCls}-right-icon`}>{addRightIcon}</span> : searchBtn ? <Button text={searchBtnText} disabled={isDisable} onClick={this.handleSearch}/> : null}
+                {/*{}*/}
                 {errorState && errorText ? <div><span className={`${prefixCls}-error-tip`}>{errorText}</span></div>: null}
             </div>
         )
@@ -108,8 +110,6 @@ Input.propTypes = {
     placeholder:PropTypes.string,  // 提示文案
     width:PropTypes.number, // 用户自定义宽度
     isDisable:PropTypes.bool,
-    addLeftIcon:PropTypes.node,
-    addRightIcon:PropTypes.node,
     searchBtn:PropTypes.bool,
     searchBtnText:PropTypes.string,
     isAutoFocus:PropTypes.bool,  // 是否自动获取焦点
@@ -119,5 +119,8 @@ Input.propTypes = {
     errorText:PropTypes.string,
     onKeyDown:PropTypes.func,
     onChange:PropTypes.func,
-    onSearch:PropTypes.func
+    onSearch:PropTypes.func,
+    icon:PropTypes.node,
+    addRightIcon:PropTypes.node,
+    addLeftIcon:PropTypes.node
 }

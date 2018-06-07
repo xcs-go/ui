@@ -8,7 +8,7 @@ class SideBar extends Component{
     constructor(props){
         super(props)
         this.state = {
-            uiComponents:['button','dialog','alert','Input','loading']
+            uiComponents:['button','Input','icon','dialog','alert','loading']
         }
         this.handleClickUiComponent = this.handleClickUiComponent.bind(this);
         this.handleClickLogo = this.handleClickLogo.bind(this);

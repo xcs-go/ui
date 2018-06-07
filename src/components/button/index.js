@@ -49,7 +49,7 @@ class Button extends Component{
         size:'default',
         text:'正常按钮',
         hover:false,
-        onClick:()=>{}
+        onClick:()=>{},
     }
     constructor(props){
         super(props);
@@ -62,7 +62,7 @@ class Button extends Component{
     }
 
     render(){
-        const {text,size,className,href,shap,prefixCls,disabled,isActive,ellipsis,hover,maxWidth} = this.props;
+        const {text,size,className,href,shap,prefixCls,disabled,isActive,ellipsis,icon,hover,maxWidth} = this.props;
         // 判断解构赋值是否成功，如果成功，则使用a标签来模拟按钮，点击跳转到相应的链接
         const ComponentProp =  href ? 'a' : 'button';
         const classes = classNames(prefixCls,className,{
@@ -77,12 +77,13 @@ class Button extends Component{
         const isEllipsis = maxWidth && ellipsis;
         const renderText = insertSpaceAndEllipsis(text,isNeedInsert,isEllipsis,maxWidth);
         return(
-            <ComponentProp className={classes} href={href ? href : undefined} onClick={this.handleClick}>{renderText}</ComponentProp>
+            <ComponentProp className={classes} href={href ? href : undefined} onClick={this.handleClick}>{icon ? icon : renderText}</ComponentProp>
         )
     }
 }
 
 Button.propTypes = {
+    icon:PropTypes.node,
     text:PropTypes.string,
     size:PropTypes.oneOf(['small','default','large']),
     href:PropTypes.string,

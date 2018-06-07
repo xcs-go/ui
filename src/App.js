@@ -7,6 +7,8 @@ import Alert from './components/alert';
 import Loading from './components/loading';
 import Home from './components/home'
 import Input from './components/input';
+import Icon from './components/icon';
+import Example from './components/example';
 
 import './App.css';
 
@@ -21,10 +23,12 @@ class App extends Component {
             <div className="main-content">
               <Route exact path="/" component={MainHome} />
               <Route path="/button" component={Button} />
+              <Route path="/icon" component={Icon}/>
+              <Route path="/input" component={Input} />
               <Route path="/dialog" component={Dialog} />
               <Route path="/alert" component={Alert} />
-              <Route path="/input" component={Input} />
               <Route path="/loading" component={Loading} />
+              <Route path="/example" component={Example}/>
             </div>
           </div>
         </Router>
